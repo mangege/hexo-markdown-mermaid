@@ -32,7 +32,6 @@ Only highlight.js is supported. exclude mermaid so Mermaid.js can render it:
 
 ```yaml
 highlight:
-  enable: true
   exclude_languages:
     - mermaid
 ```
@@ -75,7 +74,7 @@ This plugin chooses browser-side rendering for simplicity and broad compatibilit
 
 ### Why exclude mermaid from syntax highlighter?
 
-When using highlight.js with Hexo's `highlight.enable: true`, code blocks are pre-rendered to HTML with each line wrapped in `<span class="line">`:
+When using highlight.js, code blocks are pre-rendered to HTML with each line wrapped in `<span class="line">`:
 
 ```html
 <pre><span class="line">graph TD</span>

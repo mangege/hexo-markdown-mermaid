@@ -30,7 +30,6 @@ C-->D
 
 ```yaml
 highlight:
-  enable: true
   exclude_languages:
     - mermaid
 ```
@@ -73,7 +72,7 @@ Mermaid CLI 可以在构建时预渲染图表，但它依赖较重（需要 Pupp
 
 ### 为什么要排除 mermaid？
 
-使用 highlight.js 且 Hexo 配置 `highlight.enable: true` 时，代码块会被预渲染为 HTML，每行被包装在 `<span class="line">` 中：
+使用 highlight.js 时，代码块会被预渲染为 HTML，每行被包装在 `<span class="line">` 中：
 
 ```html
 <pre><span class="line">graph TD</span>
