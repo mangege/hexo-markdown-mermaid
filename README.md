@@ -75,19 +75,20 @@ This plugin chooses browser-side rendering for simplicity and broad compatibilit
 
 ### Why exclude mermaid from syntax highlighter?
 
-When using highlight.js with Hexo's `highlight.enable: true`, code blocks are pre-rendered to HTML with the `highlight` class:
+When using highlight.js with Hexo's `highlight.enable: true`, code blocks are pre-rendered to HTML with each line wrapped in `<span class="line">`:
+
+```html
+<pre><span class="line">graph TD</span>
+<span class="line">A--&gt;B</span></pre>
+```
+
+Mermaid.js searches for elements with class `.mermaid`. After excluding mermaid, code blocks will be rendered as:
 
 ```html
 <pre><code class="highlight mermaid">graph TD\nA--&gt;B</code></pre>
 ```
 
-However, Mermaid.js searches for elements with class `.mermaid`:
-
-```html
-<pre class="mermaid">graph TD\nA--&gt;B</pre>
-```
-
-This mismatch prevents diagrams from rendering. By adding `exclude_languages: - mermaid`, the syntax highlighter skips mermaid blocks, allowing Mermaid.js to render them correctly.
+This allows Mermaid.js to find and render the diagrams correctly.
 
 ### Mermaid Selector
 

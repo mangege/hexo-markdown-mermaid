@@ -73,19 +73,20 @@ Mermaid CLI 可以在构建时预渲染图表，但它依赖较重（需要 Pupp
 
 ### 为什么要排除 mermaid？
 
-使用 highlight.js 且 Hexo 配置 `highlight.enable: true` 时，代码块会被预渲染为 HTML：
+使用 highlight.js 且 Hexo 配置 `highlight.enable: true` 时，代码块会被预渲染为 HTML，每行被包装在 `<span class="line">` 中：
+
+```html
+<pre><span class="line">graph TD</span>
+<span class="line">A--&gt;B</span></pre>
+```
+
+Mermaid.js 查找 class 为 `.mermaid` 的元素。排除后，代码块会渲染为：
 
 ```html
 <pre><code class="highlight mermaid">graph TD\nA--&gt;B</code></pre>
 ```
 
-而 Mermaid.js 默认查找 class 为 `.mermaid` 的元素：
-
-```html
-<pre class="mermaid">graph TD\nA--&gt;B</pre>
-```
-
-这种不匹配会导致图表无法渲染。通过添加 `exclude_languages: - mermaid`，语法高亮器会跳过 mermaid 块，让 Mermaid.js 正确渲染。
+这样 Mermaid.js 就能正确找到并渲染图表。
 
 ### Mermaid 选择器
 
