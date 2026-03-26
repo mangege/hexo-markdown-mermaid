@@ -75,13 +75,13 @@ This plugin chooses browser-side rendering for simplicity and broad compatibilit
 
 ### Why exclude mermaid from syntax highlighter?
 
-When using highlight.js, code blocks are pre-rendered to HTML:
+When using highlight.js with Hexo's `highlight.enable: true`, code blocks are pre-rendered to HTML with the `highlight` class:
 
 ```html
 <pre><code class="highlight mermaid">graph TD\nA--&gt;B</code></pre>
 ```
 
-Mermaid.js defaults to searching for elements with class `.mermaid`:
+However, Mermaid.js searches for elements with class `.mermaid`:
 
 ```html
 <pre class="mermaid">graph TD\nA--&gt;B</pre>
