@@ -1,0 +1,15 @@
+{
+  "name": "hexo-markdown-mermaid",
+  "version": "0.0.1",
+  "description": "A Hexo plugin for rendering Mermaid diagrams",
+  "main": "index.js",
+  "keywords": ["hexo", "mermaid", "plugin"],
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.4.1",
+    "mocha": "^10.4.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  }
+}
