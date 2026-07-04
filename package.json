@@ -1,6 +1,6 @@
 {
   "name": "hexo-markdown-mermaid",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Hexo plugin for rendering Mermaid diagrams",
   "main": "index.js",
   "keywords": ["hexo", "mermaid", "plugin"],
